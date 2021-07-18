@@ -95,7 +95,7 @@ function smallestInterval(numbers)
  * 
  * @return bool
  */
-function Is_win(x, y)
+function is_win(x, y)
 {
     x.toLocaleLowerCase(); // Convertir en minuscule
     y.toLocaleLowerCase(); // Convertir en minuscule
@@ -115,4 +115,47 @@ function Is_win(x, y)
     }
     return bool;
 }
-console.log(Is_win("marion", "romain"));
+//console.log({bool: is_win("marion", "romain")});
+
+/**
+ * Method computeJoinPoint
+ * Il permet de retourne le moment ou la somme de ces chiffre se rejoins.
+ * 
+ * @param {int} nombreX - 
+ * @param {int} nombreY -
+ * 
+ * @return int
+ */
+function computeJoinPoint(nombreX, nombreY)
+{
+    let bool = true;
+    let sommeX = nombreX;
+    let sommeY = nombreY;
+    let resultat = null;
+
+    while (sommeX !== sommeY && bool) {
+
+        let x = sommeX.toString();
+        let y = sommeY.toString();
+        
+        let arrX = x.trim().split("");
+        let arrY = y.trim().split("");
+
+        let cardX = arrX.length;
+        let cardY = arrY.length;
+
+        for (let i = 0; i < cardX; i++) {
+            sommeX = sommeX + parseInt(arrX[i]);
+        }
+        for (let j = 0; j < cardY; j++) {
+            sommeY = sommeY + parseInt(arrY[j]);
+        }
+
+        if (sommeX === sommeY) {
+            bool = false;
+            resultat = sommeX;
+        }
+    }
+    return resultat;
+}
+console.log({ resultat: computeJoinPoint(471, 480) });

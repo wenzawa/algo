@@ -85,7 +85,7 @@ function valeurApprocheZero(array $ts): int
  * 
  * @return bool
  */
-function Is_win(string $x, string $y)
+function is_win(string $x, string $y)
 {
 
     strtolower($x); // Convertir en minuscule
@@ -106,4 +106,45 @@ function Is_win(string $x, string $y)
     }
     return $bool;
 }
-echo Is_win("marion", "romain") . "\n";
+//echo Is_win("marion", "romain") . "\n"; 
+
+/**
+ * Method computeJoinPoint
+ * Il permet de retourne le moment ou la somme de ces chiffre se rejoins.
+ * 
+ * @param int $nombreX - 
+ * @param int $nombreY -
+ * 
+ * @return int
+ */
+function computeJoinPoint(int $nombreX, int $nombreY)
+{
+    $bool = true;
+    $sommeX = $nombreX;
+    $sommeY = $nombreY;
+    $resultat = null;
+
+    while ($sommeX !== $sommeY && $bool) {
+        $x = (string) $sommeX;
+        $y = (string) $sommeY;
+
+        $arrX = str_split(trim($x));
+        $arrY = str_split(trim($y));
+
+        $cardX = count($arrX);
+        $cardY = count($arrY);
+
+        for ($i = 0; $i < $cardX; $i++) {
+            $sommeX = $sommeX + $arrX[$i];
+        }
+        for ($j = 0; $j < $cardY; $j++) {
+            $sommeY = $sommeY + $arrY[$j];
+        }
+        if ($sommeX === $sommeY) {
+            $bool = false;
+            $resultat = $sommeX;
+        }
+    }
+    return $resultat;
+}
+echo computeJoinPoint(471, 480) . "\n";
