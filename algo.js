@@ -1,4 +1,16 @@
 /**
+    * @description      : 
+    * @author           : christian
+    * @group            : 
+    * @created          : 18/07/2021 - 02:48:16
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 18/07/2021
+    * - Author          : christian
+    * - Modification    : 
+**/
+/**
  * Method  sommeInterval
  * Il permet d'obtenir la somme d'intervale donnée
  * 
@@ -72,3 +84,35 @@ function smallestInterval(numbers)
     }
     return res;
 }
+
+/**
+ * Method is_win
+ * Il permet d'ecrire le jumeau(twin) d'un est un mot écrit avec exactement mêmes 
+ * lettres (indépendamment de la casse)
+ * 
+ * @param {string} x - 
+ * @param {string} y -
+ * 
+ * @return bool
+ */
+function Is_win(x, y)
+{
+    x.toLocaleLowerCase(); // Convertir en minuscule
+    y.toLocaleLowerCase(); // Convertir en minuscule
+    const cardX = x.length;
+    const cardY = y.length;
+    const arrX  = x.trim().split(""); // Transformation un string en Tableau
+    const arrY  = y.trim().split(""); // Transformation un string en Tableau
+
+    let bool  = false;
+    let i = 0;
+
+    while (cardX === cardY && cardX > i) {
+        for (let j = 0; cardY > j; j++) {
+            bool = (arrX[i] === arrY[j]) ? true : false;
+        }
+        i++;
+    }
+    return bool;
+}
+console.log(Is_win("marion", "romain"));

@@ -1,1 +1,30 @@
 --------------------------- Solution---------------------------------
+3. <<Pseudo Code>>
+Déclarations
+    Variable x en Chaine.
+    Variable y  en Chaine.
+    Variable cardX, cardX, i, j en Entier 
+    Variable arrX, arrY tableau de Caractères
+    Variable bool en Boolean
+Debut
+    //Saisir les données.
+    Ecrire("Veuillez saisir le premier le chaine : ");
+    Lire(x)
+    Ecrire("Veuillez saisir le second le chaine : ");
+    Lire(y);
+    i          <- 0;
+    cardX      <- x.length;
+    cardY      <- x.length;
+    arrX       <- splitt(trim(x), ""); // Transform en tableau
+    arrY       <- splitt(trim(y), ""); // Transform en tableau
+
+    bool       <- false
+    Tant  que cardX === cardY && cardX > i   Faire
+        Pour j Allant de 0 à card2 Faire 
+            Si (arrX[i] == arrY[j]) Alors
+                bool = true;
+            FinSi
+        FinPour
+        i++; // Incrémenter
+    FinTantQue
+Fin 

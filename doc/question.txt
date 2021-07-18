@@ -5,7 +5,11 @@
 	exemple: 
 		- sommeInterval([1, 6, 4, 8, 2], 0, 2); //11
 
-2- Implémentez la fonction findSmalestInterval($numbers) le plus petit intervalle positif entre deux éléments du tableau $numbers.
-	exemple: [1, 6, 4, 8, 2], le plus petit intervalle est 1 (difference entre 2 et 1)
+2- Implémentez la fonction SmalestInterval($numbers) le plus petit intervalle positif entre deux éléments du tableau $numbers.
+	Exemple: [1, 6, 4, 8, 2], le plus petit intervalle est 1 (difference entre 2 et 1)
 		- smallestInterval([1, 6, 4, 8, 2]); // 1
-3.  Écrire l'agorithme qui permet la valeur approche de zero
+
+3. Écrire l'agorithme qui permet la valeur approche de zero.
+4. Écrire l'agorithme qui permet d'ecrire le jumeau(twin) d'un est un mot écrit avec exactement mêmes lettres (indépendamment de la casse), mais pas nécessairement dans le même ordre. 
+	Exemple: Marion est le jumeau de Romain. 
+		La fonction is_win($a, $b) retourne true si  b est le jumeau de ou false si cce n'estpas le cas a et b sont deux chaîne de caractères non null.

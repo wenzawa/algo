@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Method  sommeInterval
  * Il permet d'obtenir la somme d'intervale donnée
@@ -73,3 +74,36 @@ function valeurApprocheZero(array $ts): int
     }
     return $res;
 }
+
+/**
+ * Method is_win
+ * Il permet d'ecrire le jumeau(twin) d'un est un mot écrit avec exactement mêmes 
+ * lettres (indépendamment de la casse)
+ * 
+ * @param string $x - 
+ * @param string $y -
+ * 
+ * @return bool
+ */
+function Is_win(string $x, string $y)
+{
+
+    strtolower($x); // Convertir en minuscule
+    strtolower($y); // Convertir en minuscule
+    $cardX = mb_strlen($x);
+    $cardY = mb_strlen($y);
+    $arrX  = str_split(trim($x)); // Transformation un string en Tableau
+    $arrY  = str_split(trim($y)); // Transformation un string en Tableau
+
+    $bool  = false;
+    $i = 0;
+
+    while ($cardX === $cardY && $cardX > $i) {
+        for ($j = 0; $cardY > $j; $j++) {
+            $bool =  ($arrX[$i] === $arrY[$j]) ? true : false;
+        }
+        $i++;
+    }
+    return $bool;
+}
+echo Is_win("marion", "romain") . "\n";
